@@ -1,0 +1,7 @@
+*.log
+CHECKSUM
+.vagrant/
+target/
+doc/*.toc
+/tcllib/
+doc/www/tcllib/116/
