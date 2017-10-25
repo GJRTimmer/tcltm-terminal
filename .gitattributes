@@ -1,11 +1,10 @@
 # Cross platform repository, enforce EOL=LF
 
 # Tcl
-*.htc 	eol=lf
-*.tcl 	eol=lf
-*.md 	eol=lf
+*.htc       eol=lf
+*.tcl       eol=lf
+*.md        eol=lf
 
 # Binary
-*.cpm       binary
 *.tar.gz    binary
-*.tm		binary
+*.tm        binary
