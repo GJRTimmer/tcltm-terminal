@@ -1,0 +1,20 @@
+---
+Package:
+  - 
+    Name: terminal
+    Version: 1.0.0
+    Summary: Terminal Functions
+    Description: |-
+      Helper functions for Terminal printing
+    Tcl: 8.6
+    Dependencies:
+      - tepam
+    Files:
+      - screen.tcl
+      - print.tcl
+      - progress.tcl
+      - terminal.tcl
+    InitScript: |-
+      namespace eval terminal {
+          namespace import ::tepam::*
+      }

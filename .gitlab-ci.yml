@@ -1,0 +1,26 @@
+# Job Template(s)
+.tcltm: &tcltm
+  stage: build
+  tags:
+    - docker
+  image: datacore/tcltm:latest
+  script:
+    - tcltm
+  artifacts:
+    paths:
+      - terminal-*.tm
+
+stages:
+  - build
+
+build::master:
+  <<: *tcltm
+  except:
+    - tags
+  artifacts:
+    expire_in: 15m
+    
+build::release:
+  <<: *tcltm
+  only:
+    - tags
