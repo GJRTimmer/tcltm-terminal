@@ -18,6 +18,8 @@ build::master:
   except:
     - tags
   artifacts:
+    paths:
+      - terminal-*.tm
     expire_in: 15m
     
 build::release:
