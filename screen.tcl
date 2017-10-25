@@ -23,8 +23,8 @@ namespace eval terminal {
         }
     } {
         if { $width } {
-             if { [windows_platform] } {
-                set res [eno::shell windows "mode"]
+             if { [string tolower $::tcl_platform(platform)] eq "windows" } {
+                set res [shell::windows "mode"]
                 switch -exact -- [dict get $res CODE] {
                     0 {
                         regexp -- {Columns:[*\s]{1,}([0-9]{1,})} $res match columns
@@ -36,7 +36,7 @@ namespace eval terminal {
                 }
             }
     
-            set res [eno::shell linux "tput cols"]
+            set res [shell::linux "tput cols"]
             switch -exact -- [dict get $res CODE] {
                 0 {
                     return [dict get $res RESULT]

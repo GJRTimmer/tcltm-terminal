@@ -9,6 +9,7 @@ Package:
     Tcl: 8.6
     Dependencies:
       - tepam
+      - shell
     Files:
       - screen.tcl
       - print.tcl
