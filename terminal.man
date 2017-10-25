@@ -1,0 +1,66 @@
+[vset TCL_CMD_URI {https://www.tcl.tk/man/tcl8.6/TclCmd}]
+[manpage_begin terminal n 1.0.0]
+[keywords terminal shell]
+[keywords func functions]
+[keywords terminal]
+[keywords progress progressbar bar]
+[keywords screen]
+[copyright "2017 [uri mailto:gjr.timmer@gmail.com {G.J.R. Timmer}]"]
+[moddesc {Terminal Functions}]
+[titledesc {Terminal Functions}]
+[category {Programming tools}]
+[require Tcl 8.6]
+[require tepam 0.5]
+[description]
+[para]
+This document describes the Tcl module Terminal functions(s).
+
+[section Functions]
+[list_begin definitions]
+    [call [cmd ::terminal::configure] [opt options]]
+    This function will allow configuration of the current terminal output
+        [list_begin options]
+            [opt_def -resize] Boolean value to set the auto resize for the output.
+            This will cause the printed output by this module to check if the window
+            has been resized on every call.
+        [list_end]
+
+    [call [cmd ::terminal::screen] [opt options]]
+    This function is used for get information about the current terminal screen
+        [list_begin options]
+            [opt_def -width] Returns the current width of the screen in column size
+        [list_end]
+
+    [call [cmd ::terminal::print] [opt options]]
+    This function allows printing to the current terminal screen. Printing to the
+    screen is done to current buffered line only. To finish the current line either
+    the message has to end with a new line or the paramter [arg -nl] has to be set
+        [list_begin options]
+            [opt_def -nl] Print newline
+            [opt_def -clear] Clears current line
+            [opt_def -msg] Message to print
+        [list_end]
+
+    [call [cmd ::terminal::progress] [opt options]]
+    This function allows for the printing of a progress bar to the terminal screen.
+        [list_begin options]
+            [opt_def -prefix] Prefix to print before the actual bar
+            [opt_def -total] Total amount
+            [opt_def -current] Current progress
+            [opt_def -precent] Print percentage of completion at the end of the progressbar
+        [list_end]
+[list_end]
+
+[section {Bugs, Ideas, Feedback}]
+[vset FORUM https://github.com/GJRTimmer/shell/issues]
+[vset LABEL {GitHub}]
+
+This document, and the package it describes, may contain
+bugs and other problems.
+
+Please report such to [uri [vset FORUM] [vset LABEL]].
+
+Please also report any ideas for enhancements you may have for
+either package and/or documentation.
+
+[manpage_end]
